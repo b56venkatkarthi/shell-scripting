@@ -9,5 +9,5 @@ echo "This is day 1 of our shell scripting"
 # \t :tab space
 
 echo -e "Line1\nLine2"
-echo -e "Line3\tLine3"
+echo -e "Line3\tLine4"
 echo Line5
