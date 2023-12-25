@@ -3,7 +3,11 @@
 echo welcome to shell scripting
 echo "This is day 1 of our shell scripting"
 
+#Escape sequence character
 
-echo "Line1\nLine2"
-echo line3
-echo line4
+# \n :New Line
+# \t :tab space
+
+echo -e "Line1\nLine2"
+echo -e "Line3\tLine3"
+echo Line5
