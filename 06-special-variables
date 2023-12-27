@@ -1,9 +1,9 @@
 #!/bin/bash
-
+test
 
 # special variables are $o to $9 , $@, &#, $$
 
 
 echo "Printing Script Name : $0"
 
-echo "Printing Script Name : $8"
+echo "Printing Script Name : $2"
