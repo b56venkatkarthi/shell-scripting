@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-DATE="17JULY2023"
+DATE=$(date +%F)
 
 echo "Good Morning , Today date is  $DATE"
