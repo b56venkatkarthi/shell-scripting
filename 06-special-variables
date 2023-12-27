@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+# special variables are $o to $9 , $@, &#, $$
+
+
+echo "Printing Script Name : $0"
