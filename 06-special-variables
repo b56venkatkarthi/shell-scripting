@@ -6,4 +6,5 @@ test
 
 echo "Printing Script Name : $0"
 
-echo "Printing Script Name : $2"
+echo -e "Good Morning , Today date is  $DATE"
+echo -e "Total number of sessions : \e[33m $NO_OF_SESSIONS \e[0m"
