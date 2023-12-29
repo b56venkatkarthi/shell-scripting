@@ -8,5 +8,5 @@ echo "shell scripting"
 a=100
 b=100
 echo $a
-COMMENT
+comment
 echo "value of b is $b"
