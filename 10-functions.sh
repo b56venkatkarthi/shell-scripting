@@ -28,3 +28,12 @@ b56(){
 }
 
 b56
+
+
+stat(){
+    
+    echo "Number of session openend $(who|wc -1)"
+    echo "Today date is $(date +%F)"
+    echo  "avg cpu utlization  uptime|awk -F : '{print $NF}' | awk -F ',' '{print $2}'"
+    b56
+}
