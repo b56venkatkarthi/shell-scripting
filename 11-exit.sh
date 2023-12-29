@@ -2,7 +2,7 @@
 
 # below is the line for multi line comment
 
-<<COMMENT
+<<comment
 echo "cloud Devops Training"
 echo "shell scripting"
 a=100
