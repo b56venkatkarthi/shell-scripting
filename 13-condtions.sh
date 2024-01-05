@@ -12,7 +12,7 @@
 
 ACTION=$1   # &1 refrs first command line argument
 
-case
+case ACTION in
 
 start )
 ehco -e "\e [32 m statrting shipping service \e[0m"
