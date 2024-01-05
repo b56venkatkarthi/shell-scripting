@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-bash components/frontend.sh
+bash components/$1.sh
