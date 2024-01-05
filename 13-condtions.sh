@@ -18,11 +18,11 @@ case $ACTION in
        ;;
     stop)
         echo -e "\e[32m stoping new shipping service \e[0m"
-        exit1
+        exit 1
         ;;
     restart)
         echo -e "\e[33m Restarting new shipping service \e[0m"
-        exit3
+        exit 3
         ;;
     *)
         echo -e  "\e[35m valid options are start or stop or restart only \e[0m"
