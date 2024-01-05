@@ -7,10 +7,10 @@ ACTION=$1
 if [ "$ACTION" ==  start ] ; then
     echo -e "\e[32m starting shipping service \e[0m"
     exit 0
-elseif [ "$ACTION" ==  stop ] ; then  
+elif [ "$ACTION" ==  stop ] ; then  
     echo -e "\e[33m stopping shipping service \e[0m"
     exit 1
-    elseif [ "$ACTION" ==  restart ] ; then  
+elif [ "$ACTION" ==  restart ] ; then  
     echo -e "\e[34m restart shipping service \e[0m"
     exit 2
 
