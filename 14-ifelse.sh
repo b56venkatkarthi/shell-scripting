@@ -9,3 +9,6 @@ if [ "$ACTION" ==  start ] ; then
     exit 0
 
 fi
+
+ echo  "it has not met any contion"
+ exit 100
