@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-echo "congiguring front end"
+echo -e "******\e[35m configure fron end  service \e[0m ******"
