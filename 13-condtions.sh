@@ -29,6 +29,6 @@ exit2
 ;;
 *)
 echo -e  "\e[35 m valid options are start or stop or restart only \e[0m"
-echo -e  "\e[33 m Example usage : \e[0m bash script.sh start"
+echo -e  "\e[33 m Example usage : \e[0m \n\t\t bash script.sh start"
 
 esac
