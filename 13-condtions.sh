@@ -9,7 +9,7 @@
 
 #esac
 
-$ACTION=$1   # &1 refrs first command line argument
+ACTION=$1   # &1 refrs first command line argument
 
 case $ACTION in
     start)
