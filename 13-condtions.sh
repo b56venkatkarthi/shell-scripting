@@ -14,7 +14,7 @@
 
 case $ACTION in
     start)
-       ehco -e "\e [32m statrting shipping service \e[0m"
+       echo -e "\e [32m statrting shipping service \e[0m"
        exit 0
        ;;
     stop)
