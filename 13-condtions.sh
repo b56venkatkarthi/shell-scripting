@@ -10,9 +10,9 @@
 #esac
 
 
-    ACTION=$1   # &1 refrs first command line argument
+    $ACTION=$1   # &1 refrs first command line argument
 
-case ACTION in
+case $ACTION in
     start)
        ehco -e "\e [32m statrting shipping service \e[0m"
        exit 0
