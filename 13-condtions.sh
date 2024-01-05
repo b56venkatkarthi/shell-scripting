@@ -10,7 +10,7 @@
 #esac
 
 
-ACTION=&1
+ACTION=$1   # &1 refrs first command line argument
 
 case
 
