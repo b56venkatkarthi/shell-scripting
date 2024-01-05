@@ -14,15 +14,15 @@
 
 case $ACTION in
     start)
-       echo -e "\e [32m statrting shipping service \e[0m"
+       echo -e "\e[32m statrting shipping service \e[0m"
        exit 0
        ;;
     stop)
-        echo -e  "\e[32m stoping new shipping service \e[0m"
+        echo -e "\e[32m stoping new shipping service \e[0m"
         exit1
         ;;
     restart)
-        echo -e  "\e[33m Restarting new shipping service \e[0m"
+        echo -e "\e[33m Restarting new shipping service \e[0m"
         exit3
         ;;
     *)
