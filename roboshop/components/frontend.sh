@@ -38,14 +38,15 @@ stat $?
 
 
 echo -n "cleanup of ${Component}  : "
-cd /usr/share/nginx/html
-rm -rf *   &>> $LOGFILE
+#cd /usr/share/nginx/html
+rm -rf /usr/share/nginx/html/*   &>> $LOGFILE
 stat $?
 
 
 
 echo -n "Extracting ${Component} :"
-
+pwd
+ls -ltr
 #unzip -o /tmp/${Component}.zip   &>> LOGFILE
 #unzip /tmp/${Component}.zip    &>> $LOGFILE
 unzip /tmp/frontend.zip  &>> $LOGFILE
