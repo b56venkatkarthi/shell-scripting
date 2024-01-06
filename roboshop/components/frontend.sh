@@ -3,10 +3,8 @@
 UID=$(id -u)
 
 if [$UID -ne 0] then ;
-echo -e "\e[31m this script is expected to be executed with sudo or root user  \e[0m"
-echo -e "\e[35m Example usage: \n\t\t  \e[0m sudo bash scriptName componentName"
-
-
+    echo -e "\e[31m this script is expected to be executed with sudo or root user  \e[0m"
+    echo -e "\e[35m Example usage: \n\t\t  \e[0m sudo bash scriptName componentName"
 fi
 
 echo -e "******\e[35m configure fron end  service \e[0m ******"
