@@ -11,7 +11,7 @@ fi
     
 echo -e "****** \e[34m configure frontend  service \e[0m ******"
 echo -e  "Installing Nginx :"
-yum install nginx -y      > /tmp/$1.log
+yum install nginx -y      > /tmp/frontend.log
 
 
 
