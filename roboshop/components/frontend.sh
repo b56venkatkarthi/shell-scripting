@@ -43,6 +43,8 @@ stat $?
 
 
 echo -n "Extracting ${Component} :"
+pwd
+ls -ltr
 unzip -o /tmp/${Component}.zip   &>> LOGFILE
 #unzip /tmp/${Component}.zip    &>> $LOGFILE
 stat $?
