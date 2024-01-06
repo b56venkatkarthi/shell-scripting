@@ -29,15 +29,46 @@ if [ $? -eq 0 ] ; then
 else
   echo -e "\e[32m failure  \e[0m"
 fi
-# systemctl enable nginx
-# systemctl start nginx
 
-# curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "cleanup of $1 component : "
+cd /usr/share/nginx/html
+rm -rf *   &>> /tmp/fronend.log
 
-# cd /usr/share/nginx/html
-# rm -rf *
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
+if [ $? -eq 0 ] ; then
+  echo -e "\e[31m success \e[0m"
+else
+  echo -e "\e[32m failure  \e[0m"
+fi
+
+echo -n "Extracting $1 : "
+unzip /tmp/frontend.zip   &>> /tmp/fronend.log
+if [ $? -eq 0 ] ; then
+  echo -e "\e[31m success \e[0m"
+else
+  echo -e "\e[32m failure  \e[0m"
+fi
+
+
+echo -n "Configuring $1 : "
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.con
+if [ $? -eq 0 ] ; then
+  echo -e "\e[31m success \e[0m"
+else
+  echo -e "\e[32m failure  \e[0m"
+fi
+
+echo -n "restarting $1 : "
+
+systemctl enable nginx  &>> /tmp/fronend.log
+systemctl daemon reload nginx  &>> /tmp/fronend.log
+systemctl start nginx  &>> /tmp/fronend.log
+
+if [ $? -eq 0 ] ; then
+  echo -e "\e[31m success \e[0m"
+else
+  echo -e "\e[32m failure  \e[0m"
+fi
+
