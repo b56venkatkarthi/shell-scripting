@@ -56,22 +56,19 @@ fi
 
 
 echo -n "Configuring of ${Component} : "
-mv frontend-main/* .
+mv ${Component}-main/* .
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.con
 stat $?
-if [ $? -eq 0 ] ; then
-  echo -e "\e[31m success \e[0m"
-else
-  echo -e "\e[32m failure  \e[0m"
-fi
 
-echo -n " $Component : "
+
+echo -n " Restarting $1 : "
 
 systemctl enable nginx  &>> $LOGFILE
 systemctl daemon reload nginx &>>  $LOGFILE
 systemctl start nginx  &>> $LOGFILE
+stat $?
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
