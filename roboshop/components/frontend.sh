@@ -23,8 +23,8 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n "Downloading Component $1 :"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "Downloading $Component :"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/$Component/archive/main.zip"
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -32,7 +32,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n "cleanup of $1 component : "
+echo -n "cleanup of $Component  : "
 cd /usr/share/nginx/html
 rm -rf *   &>> LOGFILE
 
@@ -42,7 +42,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n "Extracting $1 : "
+echo -n "$Component : "
 unzip /tmp/frontend.zip   &>> LOGFILE
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -51,7 +51,7 @@ else
 fi
 
 
-echo -n "Configuring $1 : "
+echo -n "$Component : "
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
@@ -62,7 +62,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n "restarting $1 : "
+echo -n "$Component : "
 
 systemctl enable nginx  &>> LOGFILE
 systemctl daemon reload nginx &>>  LOGFILE
