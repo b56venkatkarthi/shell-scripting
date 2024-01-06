@@ -30,7 +30,7 @@ stat $?
 
 
 echo -n "Downloading $Component :"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${Component}/archive/main.zip"
+curl -s -L -o /tmp/${Component}.zip "https://github.com/stans-robot-project/${Component}/archive/main.zip"
 stat $?
 
 
