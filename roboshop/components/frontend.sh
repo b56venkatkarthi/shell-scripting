@@ -32,7 +32,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n "cleanup of $Component  : "
+echo -n "cleanup of ${Component}  : "
 cd /usr/share/nginx/html
 rm -rf *   &>> LOGFILE
 
@@ -42,7 +42,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n " $Component : "
+echo -n " Extracting of ${Component} : "
 unzip /tmp/frontend.zip   &>> LOGFILE
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -51,7 +51,7 @@ else
 fi
 
 
-echo -n " $Component : "
+echo -n " Configuring of ${Component} : "
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
