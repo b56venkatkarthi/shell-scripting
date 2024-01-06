@@ -1,9 +1,23 @@
 #!/bin/bash
 
+UID=$(id -u)
+
+if [$UID -ne 0] then ;
+echo -e "\e[31m this script is expected to be executed with sudo or root user  \e[0m"
+echo -e "\e[35m Example usage: \n\t\t  \e[0m sudo bash scriptName componentName"
+
+
+fi
 
 echo -e "******\e[35m configure fron end  service \e[0m ******"
 echo -e  "Installing Nginx : "
 yum install nginx -y
+
+if [$? -eq 0 ] ; then
+  echo -e "\e[31m success \e[0m"
+  else
+  echo -e "\e[32m failure  \e[0m"
+fi
 # systemctl enable nginx
 # systemctl start nginx
 
