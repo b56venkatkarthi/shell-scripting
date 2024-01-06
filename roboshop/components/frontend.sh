@@ -42,7 +42,7 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
-echo -n " Extracting of ${Component} : "
+echo -n "Extracting of ${Component} : "
 unzip /tmp/frontend.zip   &>> LOGFILE
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -51,7 +51,7 @@ else
 fi
 
 
-echo -n " Configuring of ${Component} : "
+echo -n "Configuring of ${Component} : "
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
