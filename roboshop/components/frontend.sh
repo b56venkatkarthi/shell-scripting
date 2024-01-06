@@ -32,7 +32,7 @@ stat $?
 echo -n "Downloading $Component :"
 curl -s -L -o /tmp/${Component}.zip "https://github.com/stans-robot-project/${Component}/archive/main.zip"
 pwd
-ls -ltr
+ls -ltr /tmp
 stat $?
 
 
