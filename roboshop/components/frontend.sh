@@ -8,9 +8,9 @@ if [ $UID -ne 0 ]; then
     exit 1
 fi
 
-    echo -e "******\e[35m configure fron end  service \e[0m ******"
+    echo -e "******\e[35m configure frontend  service \e[0m ******"
     echo -e  "Installing Nginx :"
-    yum install nginx -y      >/tmp/$1.log
+    yum install nginx -y      > /tmp/$1.log
 
 #if [$? -eq 0 ] ; then
 #  echo -e "\e[31m success \e[0m"
