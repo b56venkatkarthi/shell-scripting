@@ -6,12 +6,14 @@ if [ $UID -ne 0 ]; then
     echo -e "\e[31m this script is expected to be executed with sudo or root user\e[0m"
     echo -e "\e[35m Example usage: \n\t\t  \e[0m sudo bash scriptName componentName"
     exit 1
-fi
+
 
     echo -e "\e[33m Testing\e[0m"
     echo -e "******\e[34m configure frontend  service \e[0m ******"
     echo -e  "Installing Nginx :"
     yum install nginx -y      > /tmp/$1.log
+
+fi
 
 #if [$? -eq 0 ] ; then
 #  echo -e "\e[31m success \e[0m"
