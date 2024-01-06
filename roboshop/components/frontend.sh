@@ -48,7 +48,7 @@ echo -n "Extracting ${Component} :"
 
 #unzip -o /tmp/${Component}.zip   &>> LOGFILE
 #unzip /tmp/${Component}.zip    &>> $LOGFILE
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip  &>> $LOGFILE
 pwd
 ls -ltr
 stat $?
