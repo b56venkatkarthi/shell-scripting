@@ -34,7 +34,7 @@ fi
 
 echo -n "cleanup of ${Component}  : "
 cd /usr/share/nginx/html
-rm -rf *   &>> LOGFILE
+rm -rf *   &>> $LOGFILE
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -43,7 +43,7 @@ else
 fi
 
 echo -n "Extracting of ${Component} : "
-unzip /tmp/frontend.zip   &>> LOGFILE
+unzip -o /tmp/frontend.zip   &>> $LOGFILE
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
@@ -64,9 +64,9 @@ fi
 
 echo -n " $Component : "
 
-systemctl enable nginx  &>> LOGFILE
-systemctl daemon reload nginx &>>  LOGFILE
-systemctl start nginx  &>> LOGFILE
+systemctl enable nginx  &>> $LOGFILE
+systemctl daemon reload nginx &>>  $LOGFILE
+systemctl start nginx  &>> $LOGFILE
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
