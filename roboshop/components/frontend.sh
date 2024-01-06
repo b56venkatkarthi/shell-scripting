@@ -74,3 +74,6 @@ else
   echo -e "\e[32m failure  \e[0m"
 fi
 
+
+
+echo -e "******\e[35m $COMPONENT configuration is completed \e[0m ******"
