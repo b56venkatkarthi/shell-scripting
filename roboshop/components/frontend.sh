@@ -55,7 +55,7 @@ else
 fi
 
 echo -n "Extracting of ${Component} : "
-unzip -o /tmp/frontend.zip   &>> $LOGFILE
+unzip -o /tmp/${Component}.zip   &>> $LOGFILE
 #stat $?
 
 if [ $? -eq 0 ] ; then
