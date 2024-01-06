@@ -19,7 +19,9 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
     
-echo -e "****** \e[34m configure frontend  service \e[0m ******"
+echo -e "****** \e[34m configure ${Component}  service \e[0m ******"
+
+
 echo -e  "Installing Nginx :"
 yum install nginx -y      &>> LOGFILE
 stat $?
