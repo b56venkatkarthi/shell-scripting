@@ -23,7 +23,7 @@ echo -e "****** \e[34m configure ${Component}  service \e[0m ******"
 
 
 echo -e  "Installing Nginx :"
-yum install nginx -y      &>> LOGFILE
+yum install nginx -y      &>> $LOGFILE
 stat $?
 
 
