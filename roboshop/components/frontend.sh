@@ -55,10 +55,10 @@ else
 fi
 
 
-echo -n "Configuring of ${Component} : "
+echo -n "Configuring of ${Component} :"
 mv ${Component}-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+rm -rf ${Component}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.con
 stat $?
 
