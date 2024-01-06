@@ -59,7 +59,7 @@ echo -n "Configuring of ${Component} :"
 mv ${Component}-main/* .
 mv static/* .
 rm -rf ${Component}-main README.md
-mv localhost.conf /etc/nginx/default.d/roboshop.con
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 if [ $? -eq 0 ] ; then
