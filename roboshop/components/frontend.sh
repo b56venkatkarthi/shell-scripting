@@ -4,17 +4,18 @@ USER_ID=$(id -u)
 COMPONENT=frontend
 LOGFILE=&>> "/tmp/${COMPONENT}.log"
 
+stat() {
 if [ $USER_ID -ne 0 ]; then 
     echo -e "\e[31m this script is expected to be executed with sudo or root user\e[0m"
     echo -e "\e[35m Example usage: \n\t\t  \e[0m sudo bash scriptName componentName"
     exit 1
-
 fi
+}
     
 echo -e "****** \e[34m configure frontend  service \e[0m ******"
 echo -e  "Installing Nginx :"
 yum install nginx -y      &>> LOGFILE
-
+stat $?
 
 
 if [ $? -eq 0 ] ; then
@@ -25,6 +26,7 @@ fi
 
 echo -n "Downloading $Component :"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/$Component/archive/main.zip"
+stat $?
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -35,6 +37,7 @@ fi
 echo -n "cleanup of ${Component}  : "
 cd /usr/share/nginx/html
 rm -rf *   &>> $LOGFILE
+stat $?
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -44,6 +47,7 @@ fi
 
 echo -n "Extracting of ${Component} : "
 unzip -o /tmp/frontend.zip   &>> $LOGFILE
+stat $?
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
@@ -56,6 +60,7 @@ mv frontend-main/* .
 mv static/* .
 rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.con
+stat $?
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
