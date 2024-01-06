@@ -1,6 +1,8 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
+COMPONENT=$1
+LOGFILE=&>> "/tmp/${COMPONENT}.log"
 
 if [ $USER_ID -ne 0 ]; then 
     echo -e "\e[31m this script is expected to be executed with sudo or root user\e[0m"
@@ -11,7 +13,7 @@ fi
     
 echo -e "****** \e[34m configure frontend  service \e[0m ******"
 echo -e  "Installing Nginx :"
-yum install nginx -y      > /tmp/frontend.log
+yum install nginx -y      &>> LOGFILE
 
 
 
@@ -32,7 +34,7 @@ fi
 
 echo -n "cleanup of $1 component : "
 cd /usr/share/nginx/html
-rm -rf *   &>> /tmp/fronend.log
+rm -rf *   &>> LOGFILE
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -41,7 +43,7 @@ else
 fi
 
 echo -n "Extracting $1 : "
-unzip /tmp/frontend.zip   &>> /tmp/fronend.log
+unzip /tmp/frontend.zip   &>> LOGFILE
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
@@ -62,9 +64,9 @@ fi
 
 echo -n "restarting $1 : "
 
-systemctl enable nginx  &>> /tmp/fronend.log
-systemctl daemon reload nginx  &>> /tmp/fronend.log
-systemctl start nginx  &>> /tmp/fronend.log
+systemctl enable nginx  &>> LOGFILE
+systemctl daemon reload nginx &>>  LOGFILE
+systemctl start nginx  &>> LOGFILE
 
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
