@@ -57,6 +57,7 @@ fi
 echo -n "Extracting of ${Component} : "
 unzip -o /tmp/frontend.zip   &>> $LOGFILE
 stat $?
+
 if [ $? -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
