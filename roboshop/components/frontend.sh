@@ -52,8 +52,7 @@ stat $?
 
 
 
-echo -n "Configuring of ${Component} :"
-
+echo -n "Configuring ${Component} :"
  mv ${Component}-main/* .
  mv static/* .
  rm -rf ${Component}-main README.md
