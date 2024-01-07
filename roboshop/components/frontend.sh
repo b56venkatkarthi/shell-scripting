@@ -5,7 +5,7 @@ COMPONENT="frontend"
 LOGFILE="/tmp/${COMPONENT}.log"
 
 stat() {
-if [ ${COMPONENT} -eq 0 ] ; then
+if [ $1 -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
 else
   echo -e "\e[32m failure  \e[0m"
