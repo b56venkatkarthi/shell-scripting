@@ -53,9 +53,9 @@ stat $?
 
 
 echo -n "Configuring ${COMPONENT} :"
-mv ${COMPONENT}-main/* .
+mv ${COMPONENT}-tmp/* .
 mv static/* .
-rm -rf ${COMPONENT}-main README.md
+rm -rf ${COMPONENT}-tmp README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
