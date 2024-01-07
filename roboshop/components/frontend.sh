@@ -53,6 +53,8 @@ stat $?
 
 
 echo -n "Configuring ${COMPONENT} :"
+ls -ltr
+pwd
 mv ${COMPONENT}- main/* .
 mv static/* .
 rm -rf ${COMPONENT}- main README.md
