@@ -19,7 +19,7 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
     
-echo -e "****** \e[34m configure ${Component}  service \e[0m ******"
+echo -e "****** \e[34m configure ${COMPONENT}  service \e[0m ******"
 
 
 echo -e  "Installing Nginx :"
@@ -29,20 +29,20 @@ stat $?
 
 
 
-echo -n "Downloading $Component :"
-curl -s -L -o /tmp/${Component}.zip "https://github.com/stans-robot-project/${Component}/archive/main.zip"
+echo -n "Downloading $COMPONENT :"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 
 
 
-echo -n "cleanup of ${Component}  : "
+echo -n "cleanup of ${COMPONENT}  : "
 cd /usr/share/nginx/html
 rm -rf /usr/share/nginx/html/*   &>> $LOGFILE
 stat $?
 
 
 
-echo -n "Extracting ${Component} :"
+echo -n "Extracting ${COMPONENT} :"
 unzip -o /tmp/${Component}.zip   &>> LOGFILE
 #unzip /tmp/${Component}.zip    &>> $LOGFILE
 #unzip /tmp/frontend.zip  &>> $LOGFILE
@@ -52,10 +52,10 @@ stat $?
 
 
 
-echo -n "Configuring ${Component} :"
-mv ${Component}-main/* .
+echo -n "Configuring ${COMPONENT} :"
+mv ${COMPONENT}-main/* .
 mv static/* .
-rm -rf ${Component}-main README.md
+rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
@@ -69,7 +69,7 @@ stat $?
 
 
 
-echo -n " Restarting ${Component} : "
+echo -n " Restarting ${COMPONENT} : "
 
 systemctl enable nginx  &>> $LOGFILE
 systemctl daemon reload nginx &>>  $LOGFILE
