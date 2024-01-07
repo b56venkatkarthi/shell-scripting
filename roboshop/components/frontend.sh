@@ -53,12 +53,13 @@ stat $?
 
 
 echo -n "Configuring ${Component} :"
+pwd
+ls -ltr
  mv ${Component}-main/* .
  mv static/* .
  rm -rf ${Component}-main README.md
  mv localhost.conf /etc/nginx/default.d/roboshop.conf
- pwd
-ls -ltr
+
 
 #mv ${Component}-main/* .
 #mv static/* .
