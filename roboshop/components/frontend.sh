@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=frontend
+COMPONENT=$1
 LOGFILE="/tmp/${COMPONENT}.log"
 
 stat() {
