@@ -33,5 +33,17 @@ echo -n "Installing $COMPONENT REPO :"
 yum install -y mongodb-org  &>> ${LOGFILE}
 stat $?
 
+echo -n "Enabling  $COMPONENT  :"
+sed -i -e 's/127.0.0/0.0.0/' mongod.conf
+stat $?
+
+
+echo -n " Restarting ${COMPONENT} : "
+systemctl enable mongod  &>> $LOGFILE
+systemctl daemon-reload mongod &>>  $LOGFILE
+systemctl start mongod  &>> $LOGFILE
+stat $?
+
+
 
 
