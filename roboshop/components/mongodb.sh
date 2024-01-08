@@ -24,12 +24,12 @@ fi
 echo -e "******\e[35m  configuring of ${COMPONENT}  \e[0m ******"
 
 
-echo -e "configuring $COMPONENT REPO :"
+echo -n "configuring $COMPONENT REPO :"
 curl -s -o /etc/yum.repos.d/mongodb.repo $MONGO_REPO
 stat $?
 
 
-echo -e "Installing $COMPONENT REPO :"
+echo -n "Installing $COMPONENT REPO :"
 yum install -y mongodb-org  &>> ${LOGFILE}
 stat $?
 
