@@ -41,7 +41,7 @@ stat $?
 echo -n " Restarting ${COMPONENT} :"
 systemctl enable mongod  &>> $LOGFILE
 systemctl daemon-reload mongod &>>  $LOGFILE
-systemctl start mongod  &>> $LOGFILE
+systemctl restart mongod  &>> $LOGFILE
 stat $?
 
 
