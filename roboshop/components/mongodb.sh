@@ -38,7 +38,7 @@ sed -i -e 's/127.0.0/0.0.0/' mongod.conf
 stat $?
 
 
-echo -n " Restarting ${COMPONENT} : "
+echo -n " Restarting ${COMPONENT} :"
 systemctl enable mongod  &>> $LOGFILE
 systemctl daemon-reload mongod &>>  $LOGFILE
 systemctl start mongod  &>> $LOGFILE
