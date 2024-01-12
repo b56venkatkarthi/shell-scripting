@@ -4,6 +4,7 @@
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
+APPUSER="roboshop"
 
 
 stat() {
@@ -27,4 +28,9 @@ stat $?
 
 echo -n "Installing NodeJs  ;"
 yum install nodejs -y   &>> $LOGFILE
+stat $?
+
+
+echo -n "Creating $APPUSER ;"
+useradd $APPUSER
 stat $?
