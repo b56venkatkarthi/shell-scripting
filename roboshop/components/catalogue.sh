@@ -25,5 +25,5 @@ ecurl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
 stat$?
 
 echo -n "Installing NodeJs  ;"
-yum install nodejs -y  &>>  $LOGFILE
+yum install nodejs -y   &>> $LOGFILE
 stat$?
