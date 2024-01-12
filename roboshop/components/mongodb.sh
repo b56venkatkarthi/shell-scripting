@@ -44,23 +44,6 @@ systemctl daemon-reload mongod &>>  $LOGFILE
 systemctl restart mongod  &>> $LOGFILE
 stat $?
 
-echo -n " Downlaoding ${COMPONENT} :"
-curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL 
-stat $?
-
-echo -n " Extracting ${COMPONENT} :"
-cd /tmp
-unzip -o mongodb.zip        & >>LOGFILE
-stat $?
-
-echo -n " Injecting Schema :"
-cd /tmp/mongodb-main
-mongo < users.js
-mongo < catalogue.js
-stat $?
-
-echo -e "******\e[35m $COMPONENT configuration is completed \e[0m ******"
-
 
 
 
