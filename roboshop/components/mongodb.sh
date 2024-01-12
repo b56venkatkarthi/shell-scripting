@@ -53,7 +53,7 @@ cd /tmp
 unzip -o /tmp/${COMPONENT}.zip        & >>LOGFILE
 stat $?
 
-echo -n " Injecting Schema ${COMPONENT} :"
+echo -n " Injecting Schema :"
 cd /tmp/mongodb-main
 mongo < catalogue.js
 mongo < users.js
