@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongo
+COMPONENT=mongodb
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO="curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
 SCHEMA_URL="https://github.com/stans-robot-project/mongodb/archive/main.zip"
@@ -54,10 +54,9 @@ unzip -o /tmp/${COMPONENT}.zip        & >>LOGFILE
 stat $?
 
 echo -n " Injecting Schema :"
-cd /tmp
-cd /mongodb-main
-mongo < catalogue.js
-mongo < users.js
+cd /tmp/mongodb-main
+mongodb < users.js
+mongodb < catalogue.js
 stat $?
 
 echo -e "******\e[35m $COMPONENT configuration is completed \e[0m ******"
