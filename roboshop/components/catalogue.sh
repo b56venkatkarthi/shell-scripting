@@ -22,9 +22,9 @@ if [ $USER_ID -ne 0 ]; then
     exit 1
 fi
 
-echo -n "Configuring NodeJs Repo ;"
-curl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
-stat $?
+#echo -n "Configuring NodeJs Repo ;"
+#curl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
+#stat $?
 
 echo -n "Installing NodeJs  ;"
 yum install nodejs -y   &>> $LOGFILE
@@ -32,5 +32,10 @@ stat $?
 
 
 echo -n "Creating $APPUSER ;"
-useradd $APPUSER
-stat $?
+id $APPUSER   & >> $LOGFILE
+if [ $? -ne 0 ] ; then
+  useradd $APPUSER
+  stat $?
+else
+   echo -e "\e[35m skiping \e[0m"
+fi 
