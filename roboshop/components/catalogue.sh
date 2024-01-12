@@ -44,3 +44,10 @@ fi
 echo -n "Downloading $COMPONENT ;"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $?
+
+
+
+echo -n "Extracting $COMPONENT ;"
+cd /home/roboshop
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+stat $?
