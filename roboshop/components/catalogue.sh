@@ -21,7 +21,7 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
 echo -n "Configuring NodeJs Repo ;"
-ecurl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
 stat$?
 
 echo -n "Installing NodeJs  ;"
