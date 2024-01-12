@@ -41,6 +41,6 @@ else
    echo -e "\e[35m skiping \e[0m"
 fi 
 
-echo -n "Downloading $COMPOENNT ;"
-curl -s -L -o /tmp/$COMPOENNT.zip &COMPONENT_URL
+echo -n "Downloading $COMPONENT ;"
+curl -s -L -o /tmp/$COMPONENT.zip &COMPONENT_URL
 stat&?
