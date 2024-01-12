@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-COMPONENT=mongodb
+COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
 
 
