@@ -4,7 +4,7 @@ USER_ID=$(id -u)
 COMPONENT=mongo
 LOGFILE="/tmp/${COMPONENT}.log"
 MONGO_REPO="curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo"
-
+SCHEMA_URL="https://github.com/stans-robot-project/mongodb/archive/main.zip"
 stat() {
 if [ $1 -eq 0 ] ; then
   echo -e "\e[31m success \e[0m"
@@ -43,6 +43,23 @@ systemctl enable mongod  &>> $LOGFILE
 systemctl daemon-reload mongod &>>  $LOGFILE
 systemctl restart mongod  &>> $LOGFILE
 stat $?
+
+echo -n " Downlaoding ${COMPONENT} :"
+curl -s -L -o /tmp/mongodb.zip $SCHEMA_URL 
+stat $?
+
+echo -n " Extracting ${COMPONENT} :"
+unzip -o /tmp/${COMPONENT}.zip        & >>LOGFILE
+stat $?
+
+echo -n " Injecting Schema ${COMPONENT} :"
+cd /tmp/mongodb-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
+
+echo -e "******\e[35m $COMPONENT configuration is completed \e[0m ******"
+
 
 
 
