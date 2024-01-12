@@ -22,8 +22,8 @@ fi
 
 echo -n "Configuring NodeJs Repo ;"
 curl --silent --location https://rpm.nodesource.com/pub_16.x | sudo bash -
-stat$?
+stat $?
 
 echo -n "Installing NodeJs  ;"
 yum install nodejs -y   &>> $LOGFILE
-stat$?
+stat $?
