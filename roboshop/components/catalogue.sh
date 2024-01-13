@@ -52,10 +52,10 @@ rm -rf $APPUSER_HOME & >> $LOGFILE
 
 
 
-#echo -n "Extracting $COMPONENT ;"
-#cd /home/roboshop
-#unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
-#stat $?
+echo -n "Extracting $COMPONENT ;"
+cd /home/roboshop
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+stat $?
 
 
 echo -n "Configuring  $COMPONENT the Permission ;"
