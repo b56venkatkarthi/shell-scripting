@@ -64,6 +64,18 @@ stat $?
 
 
 echo -n "Configuring  $COMPONENT sysdtemd file ;"
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' ${APPUSER_HOME}/systemd.service
+mv ${APPUSER_HOME}/systemd.service /etc/systemd/system/${COMPONENT}.service
+stat $?
+
+echo -n "Starting  $COMPONENT service  ;"
+systemctl daemon reload &>>  $LOGFILE
+systemctl enable   &>> $LOGFILE
+systemctl restart   &>> $LOGFILE
+stat $?
+
+
+echo -e "******\e[35m $COMPONENT configuration is completed \e[0m ******"
 
 
 
