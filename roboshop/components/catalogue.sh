@@ -7,6 +7,8 @@ COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
 
+APPUSER_HOME="/home/$APPUSER/${COMPONENT}"
+
 
 stat() {
 if [ $1 -eq 0 ] ; then
@@ -54,10 +56,14 @@ stat $?
 
 
 echo -n "Configuring  $COMPONENT the Permission ;"
-mv /home/$APPUSER/${COMPONENT}-main /home/$APPUSER/${COMPONENT}
-chown -R $APPUSER:$APPUSER /home/${$APPUSER}/${COMPONENT}
-chmod -R 770  /home/${APPUSER}/${COMPONENT}
+mv /home/$APPUSER/${COMPONENT}-main $APPUSER_HOME
+chown -R $APPUSER:$APPUSER $APPUSER_HOME
+chmod -R 770  $APPUSER_HOME
 stat $?
+
+
+
+echo -n "Configuring  $COMPONENT sysdtemd file ;"
 
 
 
