@@ -47,6 +47,9 @@ echo -n "Downloading $COMPONENT ;"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $?
 
+echo -n "Performing cleanup of  $COMPONENT ;"
+rm -rf $APPUSER_HOME & >> $LOGFILE
+
 
 
 #echo -n "Extracting $COMPONENT ;"
@@ -61,6 +64,10 @@ chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770  $APPUSER_HOME
 stat $?
 
+echo -n "Generating  Artifacts ;"
+cd $APPUSER_HOME
+npm install &>> $LOGFILE
+stat $?
 
 
 echo -n "Configuring  $COMPONENT sysdtemd file ;"
