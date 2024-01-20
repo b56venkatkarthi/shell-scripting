@@ -64,7 +64,7 @@ chmod -R 770  $APPUSER_HOME
 stat $?
 
 echo -n "Generating  Artifacts ; "
-cd /home/roboshop/catalogue
+cd $APPUSER_HOME
 npm install          
 stat $?
 
