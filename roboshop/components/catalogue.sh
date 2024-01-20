@@ -51,14 +51,14 @@ stat $?
 
 
 
-#echo -n "Extracting $COMPONENT ;"
-#cd /home/roboshop
-#unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
-#stat $?
+echo -n "Extracting $COMPONENT ;"
+cd /home/roboshop
+unzip /tmp/${COMPONENT}.zip   &>> $LOGFILE
+stat $?
 
 
 echo -n "Configuring  $COMPONENT the Permission :"
-mv $APPUSER_HOME-main $APPUSER_HOME
+mv ${APPUSER_HOME}-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770  $APPUSER_HOME
 stat $?
