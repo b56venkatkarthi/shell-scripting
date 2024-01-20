@@ -2,7 +2,7 @@
 
 
 USER_ID=$(id -u)
-COMPONENT=catalogue
+COMPONENT="catalogue"
 COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
