@@ -65,7 +65,7 @@ stat $?
 
 echo -n "Generating  Artifacts ; "
 cd $APPUSER_HOME
-npm install 
+npm install
 stat $?
 
 
