@@ -47,8 +47,8 @@ echo -n "Downloading $COMPONENT ;"
 curl -s -L -o /tmp/$COMPONENT.zip $COMPONENT_URL
 stat $?
 
-echo -n "Performing cleanup of  $COMPONENT ;"
-rm -rf $APPUSER_HOME & >> $LOGFILE
+#echo -n "Performing cleanup of  $COMPONENT ;"
+#rm -rf $APPUSER_HOME & >> $LOGFILE
 
 
 
