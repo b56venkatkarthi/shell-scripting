@@ -65,7 +65,7 @@ chmod -R 770  $APPUSER_HOME
 stat $?
 
 echo -n "Generating  Artifacts ;"
-cd ${APPUSER_HOME}
+cd $APPUSER_HOME
 npm install &>> $LOGFILE
 stat $?
 
