@@ -40,7 +40,7 @@ if [ $? -ne 0 ] ; then
   useradd $APPUSER
   stat $?
 else
-   echo -e "\e[35m skiping \e[0m"
+   echo -e "\e[35m skipping \e[0m"
 fi 
 
 echo -n "Downloading $COMPONENT ;"
