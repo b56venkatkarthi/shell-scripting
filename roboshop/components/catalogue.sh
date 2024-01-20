@@ -6,7 +6,6 @@ COMPONENT="catalogue"
 COMPONENT_URL="https://github.com/stans-robot-project/catalogue/archive/main.zip"
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
-
 APPUSER_HOME="/home/${APPUSER}/${COMPONENT}"
 
 
@@ -58,8 +57,8 @@ stat $?
 #stat $?
 
 
-echo -n "Configuring  $COMPONENT the Permission ;"
-mv ${APPUSER_HOME}-main $APPUSER_HOME
+echo -n "Configuring  $COMPONENT the Permission :"
+mv $APPUSER_HOME-main $APPUSER_HOME
 chown -R $APPUSER:$APPUSER $APPUSER_HOME
 chmod -R 770  $APPUSER_HOME
 stat $?
