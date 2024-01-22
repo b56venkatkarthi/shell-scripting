@@ -4,16 +4,18 @@
 
 AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-CentOS7" | jq ".Images[].ImageId" | sed -e 's/"//g') #never hardcode the ami
 SGID=$(aws ec2 describe-security-groups --filters "Name=group-name,Values=b56-allow-all"| jq ".SecurityGroups[].GroupId" | sed -e 's/"//g') #never hardcode the ami
-INSTANCE_TYPE="t3.micro"
-COMPONENT=$1
-HOSTEDZONEID="Z074951730BXMKX1S7VS1"
-
-
 if [ -z $1 ] || [ -z $2 ] ; then 
     echo -e "\e[31m ****** COMPONENT NAME & ENV ARE NEEDED ****** \e[0m \n\t\t"
     echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings dev"
     exit 1 
 fi 
+
+INSTANCE_TYPE="t3.micro"
+COMPONENT=$1
+HOSTEDZONEID="Z074951730BXMKX1S7VS1"
+
+
+
 
 echo -e "******* \e[32m $COMPONENT \e[0mServer Creation in Progress]  ******!!!!!"
 
