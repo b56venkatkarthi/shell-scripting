@@ -17,7 +17,7 @@ echo -e "******* \e[32m $COMPONENT-$ENV \e[0m Server Creation Is Compelted *****
 
 
 echo -e "*******  \e[33m $COMPONENT \e[0m DNS Record Creation in Progress ******!!!!!"
-sed -e "s/COMPONENT/${COMPONENT}-${ENV}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
 #sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATE_IP}/" route53.json > /tmp/dns.json
 aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/dns.json
 echo -e "******* \e[32m $COMPONENT-$ENV \e[0m DNS Record Creation In Completed ******* !!!!!!"
