@@ -8,6 +8,13 @@ INSTANCE_TYPE="t3.micro"
 COMPONENT=$1
 HOSTEDZONEID="Z074951730BXMKX1S7VS1"
 
+
+if [ -z $1 ] || [ -z $2 ] ; then 
+    echo -e "\e[31m ****** COMPONENT NAME & ENV ARE NEEDED ****** \e[0m \n\t\t"
+    echo -e "\e[36m \t\t Example Usage : \e[0m  bash create-ec2 ratings dev"
+    exit 1 
+fi 
+
 echo -e "******* \e[32m $COMPONENT \e[0mServer Creation in Progress]  ******!!!!!"
 
 #aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE} --security-group-ids ${SGID} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}}]"
